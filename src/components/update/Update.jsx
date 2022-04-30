@@ -3,22 +3,21 @@ import Warning from "../warning/Warning";
 import "./update.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { update, remove } from "../../redux/userSlice";
+import { updateUser } from "../../redux/apiCalls";
 
 export default function Update() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const user = useSelector(state => state.user);
+  const { userInfo, pending, error } = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    dispatch(update({ name, email }));
+    updateUser({ name, email }, dispatch);
   }
 
   const handleDelete = (e) => {
     e.preventDefault();
-    dispatch(remove());
   }
 
   return (
@@ -48,7 +47,7 @@ export default function Update() {
               <input
                 className="formInput"
                 type="text"
-                placeholder={user.name}
+                placeholder={userInfo.name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
@@ -57,7 +56,7 @@ export default function Update() {
               <input
                 className="formInput"
                 type="text"
-                placeholder={user.email}
+                placeholder={userInfo.email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -66,11 +65,14 @@ export default function Update() {
               <input className="formInput" type="password" />
             </div>
             <button
+              disabled={pending}
               className="updateButton"
               onClick={handleUpdate}
             >
               Update
             </button>
+            {error && <span className="error">Something went wrong!</span>}
+            {pending === false && <span className="success">Account has been updated!</span>}
           </form>
         </div>
       </div>

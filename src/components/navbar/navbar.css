@@ -9,13 +9,15 @@
   padding: 0px 20px;
   display: flex;
   align-items: center;
+  color: white;
+  background-color: #4267b2;
   justify-content: space-between;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: darkblue;
+  color: white;
   margin-right: 50px;
 }
 
@@ -27,15 +29,16 @@
   width: 400px;
   height: 24px;
   border: 1px solid gray;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
+  background-color: white;
   align-items: center;
 }
 
 .searchInput {
   width: 80%;
   border: none;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 
 .navbarRight {
@@ -56,8 +59,8 @@
   font-size: 16px;
 }
 
-@media only screen and (max-width: 940px){
-  .navbarCenter{
+@media only screen and (max-width: 940px) {
+  .navbarCenter {
     display: none;
   }
 }

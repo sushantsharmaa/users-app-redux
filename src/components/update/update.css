@@ -8,13 +8,13 @@
 
 .delete {
   border: none;
-  padding: 5px;
+  padding: 10px;
   font-size: 12px;
   background-color: rgb(243, 129, 152);
   color: white;
   font-weight: 500;
-  margin-top: 10px;
-  border-radius: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -47,42 +47,42 @@ form {
   margin-top: 5px;
 }
 
-.profilePic{
+.profilePic {
   margin-top: 10px;
   display: flex;
   align-items: center;
 }
 
-.change{
+.change {
   margin-left: 10px;
   font-weight: 500;
   font-size: 13px;
-  color: teal;
+  color: #4267b2;
 }
 
 .updateButton {
   margin-top: 10px;
   border: none;
-  padding: 5px  10px;
-  background-color: rgb(97, 161, 161);
+  padding: 10px 15px;
+  background-color: #4267b2;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: 500;
 }
 
-.updateButton:disabled{
+.updateButton:disabled {
   cursor: not-allowed;
   background-color: rgb(136, 168, 168);
 }
 
-.error{
+.error {
   color: red;
   font-size: 14px;
   margin-left: 20px;
 }
 
-.success{
+.success {
   color: green;
   font-size: 14px;
   margin-left: 20px;
